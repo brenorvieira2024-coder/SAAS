@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeralotes - Imóveis do Futuro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Fazer Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="geometric-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <!-- Conteúdo Principal -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">ZERALOTES</span>
+                    <span class="title-line">IMÓVEIS DO</span>
+                    <span class="title-line highlight">FUTURO</span>
+                </h1>
+                <p class="hero-subtitle">Descubra os empreendimentos mais inovadores e tecnológicos do mercado imobiliário. Onde a tecnologia encontra o conforto, criando espaços únicos para sua vida.</p>
+                <div class="hero-buttons">
+                    <a href="empreendimentos.html" class="btn-primary">Ver Empreendimentos</a>
+                    <a href="quem-somos.html" class="btn-secondary">Conheça-nos</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="property-preview">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/600x400/2c5aa0/ffffff?text=Último+Lançamento" alt="Último Lançamento">
+                        <div class="property-overlay">
+                            <div class="property-info">
+                                <h3>Residencial Tech Park</h3>
+                                <p>São Paulo - SP</p>
+                                <span class="price">A partir de R$ 450.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Indicador de Scroll -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+        
+        <!-- Efeito de Matrix (Opcional) -->
+        <div class="matrix-rain" id="matrix-rain"></div>
+    </section>
+
+    <!-- Empreendimentos Carousel -->
+    <section class="empreendimentos-preview">
+        <div class="container">
+            <h2 class="section-title neon-text">Nossos Empreendimentos</h2>
+            <div class="carousel-container glow-border">
+                <div class="carousel-track" id="empreendimentos-carousel">
+                    <div class="carousel-item">
+                        <div class="property-card hover-glow">
+                            <div class="property-image">
+                                <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Casa+Modern" alt="Casa Moderna">
+                                <div class="property-badge glow-effect">Casa</div>
+                            </div>
+                            <div class="property-content">
+                                <h3 class="neon-text">Casa Moderna Futuro</h3>
+                                <p>São Paulo - SP</p>
+                                <span class="price neon-text">R$ 380.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="property-card hover-glow">
+                            <div class="property-image">
+                                <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Apartamento" alt="Apartamento">
+                                <div class="property-badge glow-effect">Apartamento</div>
+                            </div>
+                            <div class="property-content">
+                                <h3 class="neon-text">Apartamento Green</h3>
+                                <p>Rio de Janeiro - RJ</p>
+                                <span class="price neon-text">R$ 520.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="property-card hover-glow">
+                            <div class="property-image">
+                                <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Terreno" alt="Terreno">
+                                <div class="property-badge glow-effect">Terreno</div>
+                            </div>
+                            <div class="property-content">
+                                <h3 class="neon-text">Terreno Premium</h3>
+                                <p>Brasília - DF</p>
+                                <span class="price neon-text">R$ 280.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev hover-glow" id="prev-empreendimentos">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next hover-glow" id="next-empreendimentos">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview">
+        <div class="container">
+            <h2 class="section-title neon-text">Últimas do Blog</h2>
+            <div class="blog-carousel">
+                <div class="blog-item hover-glow hologram-effect">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250/00ff88/000000?text=Blog+Post" alt="Blog Post">
+                        <div class="distortion-effect"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="neon-text">Tendências do Mercado Imobiliário 2024</h3>
+                        <p>Descubra as principais tendências que estão moldando o futuro do mercado imobiliário...</p>
+                        <div class="blog-meta">
+                            <span class="author">Por João Silva</span>
+                            <span class="date">15 Jan 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item hover-glow hologram-effect">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250/00ff88/000000?text=Blog+Post+2" alt="Blog Post">
+                        <div class="distortion-effect"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="neon-text">Como Escolher o Imóvel Ideal</h3>
+                        <p>Dicas essenciais para encontrar o imóvel perfeito para você e sua família...</p>
+                        <div class="blog-meta">
+                            <span class="author">Por Maria Santos</span>
+                            <span class="date">12 Jan 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media & CTA -->
+    <section class="social-cta">
+        <div class="container">
+            <div class="social-links">
+                <h3 class="neon-text">Siga-nos nas Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon hover-glow glow-effect"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon hover-glow glow-effect"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon hover-glow glow-effect"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon hover-glow glow-effect"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3 class="neon-text">Pronto para Encontrar seu Imóvel dos Sonhos?</h3>
+                <button class="btn-primary hover-glow cinematic-zoom">Fale Conosco</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zeralotes</h3>
+                    <p>Imóveis do futuro, hoje.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="empreendimentos.html">Empreendimentos</a></li>
+                        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>✉️ contato@zeralotes.com</p>
+                    <p>📍 São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zeralotes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

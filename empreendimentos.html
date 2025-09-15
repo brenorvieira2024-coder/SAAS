@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreendimentos - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/viewer-360.css">
+    <link rel="stylesheet" href="styles/empreendimentos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link active">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#casas">Casas</a></li>
+                        <li><a href="#apartamentos">Apartamentos</a></li>
+                        <li><a href="#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Fazer Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="developments-hero">
+        <div class="developments-hero-content">
+            <h1>Nossos Empreendimentos</h1>
+            <p>Descubra uma seleção cuidadosa de imóveis que combinam localização privilegiada, qualidade de construção e tecnologia moderna.</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+        <div class="search-filter-container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar empreendimentos..." class="search-input">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="casas">Casas</button>
+                    <button class="filter-btn" data-category="apartamentos">Apartamentos</button>
+                    <button class="filter-btn" data-category="terrenos">Terrenos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">Todos os Empreendimentos</button>
+                <button class="category-tab" data-category="casas">Casas</button>
+                <button class="category-tab" data-category="apartamentos">Apartamentos</button>
+                <button class="category-tab" data-category="terrenos">Terrenos</button>
+            </div>
+            
+            <div class="properties-grid" id="properties-grid">
+                <!-- Casas -->
+                <div class="property-card" data-category="casas">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x250/2c5aa0/ffffff?text=Casa+Modern" alt="Casa Moderna">
+                        <div class="property-badge">Casa</div>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Casa Moderna Jardins</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São Paulo - SP
+                        </p>
+                        <p class="property-description">Casa térrea com 3 quartos, 2 banheiros, sala ampla e quintal arborizado.</p>
+                        <div class="property-features">
+                            <span class="feature-tag">3 Quartos</span>
+                            <span class="feature-tag">2 Banheiros</span>
+                            <span class="feature-tag">Quintal</span>
+                        </div>
+                        <div class="property-price">R$ 650.000</div>
+                        <div class="property-actions">
+                            <a href="#" class="btn-interest">ME INTERESSO</a>
+                            <a href="#" class="btn-360">Ver 360°</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apartamentos -->
+                <div class="property-card" data-category="apartamentos">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x250/2c5aa0/ffffff?text=Apartamento+Luxo" alt="Apartamento de Luxo">
+                        <div class="property-badge">Apartamento</div>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Residencial Tech Park</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São Paulo - SP
+                        </p>
+                        <p class="property-description">Apartamento de 2 quartos com tecnologia integrada e vista panorâmica.</p>
+                        <div class="property-features">
+                            <span class="feature-tag">2 Quartos</span>
+                            <span class="feature-tag">2 Banheiros</span>
+                            <span class="feature-tag">Vista Panorâmica</span>
+                        </div>
+                        <div class="property-price">R$ 450.000</div>
+                        <div class="property-actions">
+                            <a href="#" class="btn-interest">ME INTERESSO</a>
+                            <a href="#" class="btn-360">Ver 360°</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terrenos -->
+                <div class="property-card" data-category="terrenos">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x250/2c5aa0/ffffff?text=Terreno+Premium" alt="Terreno Premium">
+                        <div class="property-badge">Terreno</div>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Terreno Premium Alphaville</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São Paulo - SP
+                        </p>
+                        <p class="property-description">Terreno de 500m² em condomínio fechado com infraestrutura completa.</p>
+                        <div class="property-features">
+                            <span class="feature-tag">500m²</span>
+                            <span class="feature-tag">Condomínio Fechado</span>
+                            <span class="feature-tag">Infraestrutura</span>
+                        </div>
+                        <div class="property-price">R$ 800.000</div>
+                        <div class="property-actions">
+                            <a href="#" class="btn-interest">ME INTERESSO</a>
+                            <a href="#" class="btn-360">Ver 360°</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="developments-cta">
+        <h2>Encontre o Imóvel dos Seus Sonhos</h2>
+        <p>Nossa equipe especializada está pronta para ajudá-lo a encontrar o empreendimento perfeito para sua família.</p>
+        <div class="cta-buttons">
+            <a href="fale-conosco.html" class="cta-btn cta-btn-primary">Fale Conosco</a>
+            <a href="quem-somos.html" class="cta-btn cta-btn-secondary">Conheça-nos</a>
+        </div>
+    </section>
+
+
+    <!-- Properties Grid -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid" id="properties-grid">
+                <!-- Casas -->
+                <div class="property-card" data-category="casas" data-location="sao-paulo" data-price="380000" data-rooms="3">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Casa+Moderna" alt="Casa Moderna">
+                        <div class="property-badge">Casa</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Casa Moderna Futuro</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+                        <p class="description">Casa térrea moderna com design futurista, área de lazer completa e tecnologia integrada.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-bed"></i>
+                                <span>3 quartos</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bath"></i>
+                                <span>2 banheiros</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-car"></i>
+                                <span>2 vagas</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Piscina</span>
+                            <span class="benefit">Jardim</span>
+                            <span class="benefit">Garagem</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 380.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apartamentos -->
+                <div class="property-card" data-category="apartamentos" data-location="rio-janeiro" data-price="520000" data-rooms="2">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Apartamento+Green" alt="Apartamento Green">
+                        <div class="property-badge">Apartamento</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento Green</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Rio de Janeiro - RJ</p>
+                        <p class="description">Apartamento sustentável com vista para o mar, localizado no coração da Zona Sul.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-bed"></i>
+                                <span>2 quartos</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bath"></i>
+                                <span>2 banheiros</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-car"></i>
+                                <span>1 vaga</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Vista Mar</span>
+                            <span class="benefit">Academia</span>
+                            <span class="benefit">Piscina</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 520.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terrenos -->
+                <div class="property-card" data-category="terrenos" data-location="brasilia" data-price="280000" data-rooms="0">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Terreno+Premium" alt="Terreno Premium">
+                        <div class="property-badge">Terreno</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Terreno Premium</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Brasília - DF</p>
+                        <p class="description">Terreno plano e regular, ideal para construção residencial ou comercial.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>500m²</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-road"></i>
+                                <span>Asfaltada</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-plug"></i>
+                                <span>Energia</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Plano</span>
+                            <span class="benefit">Regular</span>
+                            <span class="benefit">Documentado</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 280.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mais propriedades... -->
+                <div class="property-card" data-category="casas" data-location="belo-horizonte" data-price="420000" data-rooms="4">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Casa+Familiar" alt="Casa Familiar">
+                        <div class="property-badge">Casa</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Casa Familiar Premium</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Belo Horizonte - MG</p>
+                        <p class="description">Casa espaçosa perfeita para famílias grandes, com quintal e área de lazer.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-bed"></i>
+                                <span>4 quartos</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bath"></i>
+                                <span>3 banheiros</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-car"></i>
+                                <span>3 vagas</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Quintal</span>
+                            <span class="benefit">Churrasqueira</span>
+                            <span class="benefit">Área Verde</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 420.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card" data-category="apartamentos" data-location="sao-paulo" data-price="680000" data-rooms="3">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Apartamento+Luxo" alt="Apartamento Luxo">
+                        <div class="property-badge">Apartamento</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Apartamento de Luxo</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+                        <p class="description">Apartamento de alto padrão com acabamento de luxo e vista panorâmica da cidade.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-bed"></i>
+                                <span>3 quartos</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bath"></i>
+                                <span>3 banheiros</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-car"></i>
+                                <span>2 vagas</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Vista Panorâmica</span>
+                            <span class="benefit">Acabamento Luxo</span>
+                            <span class="benefit">Concierge</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 680.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-card" data-category="terrenos" data-location="sao-paulo" data-price="350000" data-rooms="0">
+                    <div class="property-image">
+                        <img src="https://via.placeholder.com/400x300/00ff88/000000?text=Terreno+Comercial" alt="Terreno Comercial">
+                        <div class="property-badge">Terreno</div>
+                        <div class="property-overlay">
+                            <button class="btn-360" onclick="open360View()">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Terreno Comercial</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+                        <p class="description">Terreno comercial em localização estratégica, ideal para investimento.</p>
+                        <div class="property-details">
+                            <div class="detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>800m²</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-road"></i>
+                                <span>Asfaltada</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-plug"></i>
+                                <span>Energia</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <span class="benefit">Comercial</span>
+                            <span class="benefit">Estratégico</span>
+                            <span class="benefit">Investimento</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">R$ 350.000</span>
+                            <button class="btn-primary" onclick="contactWhatsApp()">ME INTERESSO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Não Encontrou o que Procurava?</h2>
+                <p>Nossa equipe está pronta para ajudar você a encontrar o imóvel perfeito.</p>
+                <button class="btn-primary" onclick="contactWhatsApp()">Fale Conosco</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zeralotes</h3>
+                    <p>Imóveis do futuro, hoje.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="empreendimentos.html">Empreendimentos</a></li>
+                        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>✉️ contato@zeralotes.com</p>
+                    <p>📍 São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zeralotes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 360° View Modal -->
+    <div id="modal-360" class="modal-360">
+        <div class="modal-content">
+            <span class="close-modal" onclick="close360View()">&times;</span>
+            <div class="viewer-360">
+                <iframe src="https://via.placeholder.com/800x600/00ff88/000000?text=Visualização+360°" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/viewer-360.js"></script>
+    <script src="js/empreendimentos.js"></script>
+</body>
+</html>

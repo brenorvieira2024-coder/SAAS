@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Corretor - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/dashboard-corretor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link user-menu">
+                        <i class="fas fa-user-tie"></i>
+                        <span id="user-name">Corretor</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard-corretor.html">Meu Painel</a></li>
+                        <li><a href="#" onclick="logout()">Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-layout">
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <img src="https://via.placeholder.com/80x80/00ff88/000000?text=CC" alt="Corretor" id="profile-avatar">
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profile-name">Carlos Corretor</h3>
+                            <p id="profile-email">corretor@teste.com</p>
+                            <span class="profile-role">CRECI: 123456</span>
+                        </div>
+                    </div>
+                    
+                    <nav class="sidebar-nav">
+                        <ul>
+                            <li>
+                                <a href="#overview" class="nav-item active" data-section="overview">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Visão Geral</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#clients" class="nav-item" data-section="clients">
+                                    <i class="fas fa-users"></i>
+                                    <span>Clientes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#properties" class="nav-item" data-section="properties">
+                                    <i class="fas fa-home"></i>
+                                    <span>Empreendimentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#checklists" class="nav-item" data-section="checklists">
+                                    <i class="fas fa-tasks"></i>
+                                    <span>Checklists</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#blog" class="nav-item" data-section="blog">
+                                    <i class="fas fa-blog"></i>
+                                    <span>Blog</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#content" class="nav-item" data-section="content">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Conteúdo</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about" class="nav-item" data-section="about">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Quem Somos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#profile" class="nav-item" data-section="profile">
+                                    <i class="fas fa-user-cog"></i>
+                                    <span>Perfil</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="dashboard-main">
+                    <!-- Overview Section -->
+                    <section class="dashboard-section-content active" id="overview">
+                        <div class="section-header">
+                            <h1>Visão Geral</h1>
+                            <p>Painel administrativo da Zeralotes</p>
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Clientes Ativos</h3>
+                                    <p>Total de clientes</p>
+                                    <span class="stat-value">24</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Empreendimentos</h3>
+                                    <p>Propriedades cadastradas</p>
+                                    <span class="stat-value">12</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Vendas</h3>
+                                    <p>Este mês</p>
+                                    <span class="stat-value">8</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Comissões</h3>
+                                    <p>Este mês</p>
+                                    <span class="stat-value">R$ 45.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="recent-activity">
+                            <h2>Atividade Recente</h2>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Novo cliente cadastrado</h4>
+                                        <p>João Silva foi adicionado ao sistema</p>
+                                        <span class="activity-time">1 hora atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Novo empreendimento</h4>
+                                        <p>Residencial Futuro Verde foi cadastrado</p>
+                                        <span class="activity-time">3 horas atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-blog"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Post publicado</h4>
+                                        <p>"Tendências do Mercado 2024" foi publicado</p>
+                                        <span class="activity-time">1 dia atrás</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Clients Section -->
+                    <section class="dashboard-section-content" id="clients">
+                        <div class="section-header">
+                            <h1>Gerenciar Clientes</h1>
+                            <p>Cadastre e gerencie seus clientes</p>
+                        </div>
+
+                        <div class="clients-container">
+                            <div class="clients-header">
+                                <button class="btn-primary" onclick="showAddClientModal()">
+                                    <i class="fas fa-plus"></i>
+                                    Novo Cliente
+                                </button>
+                                <div class="search-box">
+                                    <input type="text" placeholder="Buscar clientes..." id="client-search">
+                                    <button onclick="searchClients()">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="clients-grid" id="clients-grid">
+                                <!-- Clients will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Properties Section -->
+                    <section class="dashboard-section-content" id="properties">
+                        <div class="section-header">
+                            <h1>Gerenciar Empreendimentos</h1>
+                            <p>Cadastre e gerencie propriedades</p>
+                        </div>
+
+                        <div class="properties-container">
+                            <div class="properties-header">
+                                <button class="btn-primary" onclick="showAddPropertyModal()">
+                                    <i class="fas fa-plus"></i>
+                                    Novo Empreendimento
+                                </button>
+                                <div class="filter-tabs">
+                                    <button class="filter-tab active" data-filter="all">Todos</button>
+                                    <button class="filter-tab" data-filter="casas">Casas</button>
+                                    <button class="filter-tab" data-filter="apartamentos">Apartamentos</button>
+                                    <button class="filter-tab" data-filter="terrenos">Terrenos</button>
+                                </div>
+                            </div>
+
+                            <div class="properties-grid" id="properties-grid">
+                                <!-- Properties will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Checklists Section -->
+                    <section class="dashboard-section-content" id="checklists">
+                        <div class="section-header">
+                            <h1>Gerenciar Checklists</h1>
+                            <p>Atualize o progresso dos empreendimentos dos clientes</p>
+                        </div>
+
+                        <div class="checklists-container">
+                            <div class="checklists-header">
+                                <div class="client-selector">
+                                    <label>Selecionar Cliente:</label>
+                                    <select id="client-selector">
+                                        <option value="">Selecione um cliente</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="checklist-manager" id="checklist-manager">
+                                <div class="no-selection">
+                                    <i class="fas fa-user-check"></i>
+                                    <h3>Selecione um cliente</h3>
+                                    <p>Escolha um cliente para gerenciar seu checklist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Blog Section -->
+                    <section class="dashboard-section-content" id="blog">
+                        <div class="section-header">
+                            <h1>Gerenciar Blog</h1>
+                            <p>Crie e edite posts do blog</p>
+                        </div>
+
+                        <div class="blog-container">
+                            <div class="blog-header">
+                                <button class="btn-primary" onclick="showAddPostModal()">
+                                    <i class="fas fa-plus"></i>
+                                    Novo Post
+                                </button>
+                            </div>
+
+                            <div class="posts-grid" id="posts-grid">
+                                <!-- Posts will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Content Section -->
+                    <section class="dashboard-section-content" id="content">
+                        <div class="section-header">
+                            <h1>Gerenciar Conteúdo</h1>
+                            <p>Edite imagens e chamadas do site</p>
+                        </div>
+
+                        <div class="content-container">
+                            <div class="content-tabs">
+                                <button class="tab-btn active" data-tab="images">Imagens</button>
+                                <button class="tab-btn" data-tab="calls">Chamadas</button>
+                            </div>
+
+                            <div class="content-tab-content">
+                                <div class="content-tab active" id="images-tab">
+                                    <div class="images-manager">
+                                        <h3>Gerenciar Imagens</h3>
+                                        <div class="image-categories">
+                                            <div class="image-category">
+                                                <h4>Imagens de Empreendimentos</h4>
+                                                <div class="image-grid">
+                                                    <!-- Images will be loaded dynamically -->
+                                                </div>
+                                                <button class="btn-secondary" onclick="uploadImage('property')">
+                                                    <i class="fas fa-upload"></i>
+                                                    Adicionar Imagem
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-tab" id="calls-tab">
+                                    <div class="calls-manager">
+                                        <h3>Gerenciar Chamadas</h3>
+                                        <div class="calls-list">
+                                            <!-- Calls will be loaded dynamically -->
+                                        </div>
+                                        <button class="btn-primary" onclick="showAddCallModal()">
+                                            <i class="fas fa-plus"></i>
+                                            Nova Chamada
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- About Section -->
+                    <section class="dashboard-section-content" id="about">
+                        <div class="section-header">
+                            <h1>Editar Quem Somos</h1>
+                            <p>Personalize a página "Quem Somos"</p>
+                        </div>
+
+                        <div class="about-editor">
+                            <form id="about-form">
+                                <div class="form-group">
+                                    <label for="about-title">Título Principal</label>
+                                    <input type="text" id="about-title" name="title" value="CONSTRUINDO O FUTURO">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="about-subtitle">Subtítulo</label>
+                                    <textarea id="about-subtitle" name="subtitle" rows="3">Há mais de uma década transformando sonhos em realidade através de empreendimentos inovadores e sustentáveis.</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="about-mission">Missão</label>
+                                    <textarea id="about-mission" name="mission" rows="5">Desenvolver empreendimentos imobiliários que não apenas atendem às necessidades dos nossos clientes, mas que também contribuem para um futuro mais sustentável e tecnológico.</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="about-values">Valores</label>
+                                    <div class="values-list" id="values-list">
+                                        <!-- Values will be loaded dynamically -->
+                                    </div>
+                                    <button type="button" class="btn-secondary" onclick="addValue()">
+                                        <i class="fas fa-plus"></i>
+                                        Adicionar Valor
+                                    </button>
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Salvar Alterações
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Profile Section -->
+                    <section class="dashboard-section-content" id="profile">
+                        <div class="section-header">
+                            <h1>Perfil do Corretor</h1>
+                            <p>Gerencie suas informações pessoais</p>
+                        </div>
+                        <div class="coming-soon">
+                            <i class="fas fa-user-cog"></i>
+                            <h2>Em Desenvolvimento</h2>
+                            <p>Esta seção estará disponível em breve</p>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Add Client Modal -->
+    <div id="add-client-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Novo Cliente</h2>
+                <span class="close-modal" onclick="closeModal('add-client-modal')">&times;</span>
+            </div>
+            <form id="add-client-form" onsubmit="addClient(event)">
+                <div class="form-group">
+                    <label for="client-name">Nome Completo</label>
+                    <input type="text" id="client-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-email">E-mail</label>
+                    <input type="email" id="client-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-phone">Telefone</label>
+                    <input type="tel" id="client-phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-property">Empreendimento</label>
+                    <select id="client-property" name="property" required>
+                        <option value="">Selecione um empreendimento</option>
+                    </select>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('add-client-modal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Adicionar Cliente</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Property Modal -->
+    <div id="add-property-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Novo Empreendimento</h2>
+                <span class="close-modal" onclick="closeModal('add-property-modal')">&times;</span>
+            </div>
+            <form id="add-property-form" onsubmit="addProperty(event)">
+                <div class="form-group">
+                    <label for="property-name">Nome do Empreendimento</label>
+                    <input type="text" id="property-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-type">Tipo</label>
+                    <select id="property-type" name="type" required>
+                        <option value="">Selecione o tipo</option>
+                        <option value="casas">Casa</option>
+                        <option value="apartamentos">Apartamento</option>
+                        <option value="terrenos">Terreno</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-location">Localização</label>
+                    <input type="text" id="property-location" name="location" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-price">Preço</label>
+                    <input type="number" id="property-price" name="price" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-description">Descrição</label>
+                    <textarea id="property-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('add-property-modal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Adicionar Empreendimento</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Post Modal -->
+    <div id="add-post-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Novo Post</h2>
+                <span class="close-modal" onclick="closeModal('add-post-modal')">&times;</span>
+            </div>
+            <form id="add-post-form" onsubmit="addPost(event)">
+                <div class="form-group">
+                    <label for="post-title">Título</label>
+                    <input type="text" id="post-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="post-content">Conteúdo</label>
+                    <textarea id="post-content" name="content" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="post-category">Categoria</label>
+                    <select id="post-category" name="category" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="tendencias">Tendências</option>
+                        <option value="dicas">Dicas</option>
+                        <option value="financiamento">Financiamento</option>
+                        <option value="decoracao">Decoração</option>
+                        <option value="sustentabilidade">Sustentabilidade</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="post-image">Imagem</label>
+                    <input type="file" id="post-image" name="image" accept="image/*">
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('add-post-modal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Publicar Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/dashboard-corretor.js"></script>
+</body>
+</html>

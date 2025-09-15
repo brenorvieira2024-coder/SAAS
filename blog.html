@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/glow-effects.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <link rel="stylesheet" href="styles/blog-social.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Fazer Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="hero-background">
+            <div class="particles-container" id="particles-blog"></div>
+            <div class="energy-lines">
+                <div class="energy-line"></div>
+                <div class="energy-line"></div>
+                <div class="energy-line"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="shape shape-1 glow-effect"></div>
+                <div class="shape shape-2 glow-effect"></div>
+                <div class="shape shape-3 glow-effect"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line neon-text" data-text="BLOG">BLOG</span>
+                <span class="title-line highlight glitch-effect" data-text="ZERALOTES">ZERALOTES</span>
+            </h1>
+            <p class="hero-subtitle typing-effect">Fique por dentro das últimas tendências do mercado imobiliário</p>
+        </div>
+    </section>
+
+    <!-- Blog Social Content -->
+    <section class="blog-content">
+        <div class="blog-social-container">
+                <!-- Main Feed -->
+                <div class="blog-feed">
+                    <!-- Featured Post -->
+                    <article class="post featured-post">
+                        <div class="post-header">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://via.placeholder.com/50x50/00ff88/000000?text=CS" alt="Carlos Silva">
+                                </div>
+                                <div class="author-details">
+                                    <h3>Carlos Silva</h3>
+                                    <span class="post-meta">CEO Zeralotes • 2 horas atrás</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn" onclick="sharePost('featured-1')">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h2>Tendências do Mercado Imobiliário 2024: O Futuro é Agora</h2>
+                            <p>O mercado imobiliário está passando por uma transformação sem precedentes. Tecnologia, sustentabilidade e novas formas de viver estão moldando o futuro dos imóveis...</p>
+                            
+                            <div class="post-media">
+                                <img src="https://via.placeholder.com/600x300/00ff88/000000?text=Tendências+2024" alt="Tendências 2024">
+                                <div class="media-overlay">
+                                    <button class="play-btn" onclick="playVideo('trends-2024')">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="post-tags">
+                                <span class="tag">#Tendências</span>
+                                <span class="tag">#MercadoImobiliário</span>
+                                <span class="tag">#2024</span>
+                                <span class="tag">#Inovação</span>
+                            </div>
+                        </div>
+                        
+                        <div class="post-footer">
+                            <div class="post-stats">
+                                <button class="stat-btn" onclick="likePost('featured-1')">
+                                    <i class="far fa-heart"></i>
+                                    <span>127</span>
+                                </button>
+                                <button class="stat-btn" onclick="commentPost('featured-1')">
+                                    <i class="far fa-comment"></i>
+                                    <span>23</span>
+                                </button>
+                                <button class="stat-btn" onclick="sharePost('featured-1')">
+                                    <i class="far fa-share"></i>
+                                    <span>15</span>
+                                </button>
+                            </div>
+                            <div class="post-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Leitura: 5 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Regular Posts -->
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://via.placeholder.com/50x50/00ff88/000000?text=AS" alt="Ana Santos">
+                                </div>
+                                <div class="author-details">
+                                    <h3>Ana Santos</h3>
+                                    <span class="post-meta">Arquiteta • 5 horas atrás</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn" onclick="sharePost('post-2')">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h2>Como Escolher o Imóvel Ideal: Guia Completo</h2>
+                            <p>Encontrar o imóvel perfeito pode parecer uma tarefa difícil, mas com as dicas certas, você pode tomar a melhor decisão para você e sua família...</p>
+                            
+                            <div class="post-media">
+                                <img src="https://via.placeholder.com/600x300/00ff88/000000?text=Escolha+do+Imóvel" alt="Escolha do Imóvel">
+                            </div>
+                            
+                            <div class="post-tags">
+                                <span class="tag">#Dicas</span>
+                                <span class="tag">#ImóvelIdeal</span>
+                                <span class="tag">#Guia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="post-footer">
+                            <div class="post-stats">
+                                <button class="stat-btn" onclick="likePost('post-2')">
+                                    <i class="far fa-heart"></i>
+                                    <span>89</span>
+                                </button>
+                                <button class="stat-btn" onclick="commentPost('post-2')">
+                                    <i class="far fa-comment"></i>
+                                    <span>12</span>
+                                </button>
+                                <button class="stat-btn" onclick="sharePost('post-2')">
+                                    <i class="far fa-share"></i>
+                                    <span>8</span>
+                                </button>
+                            </div>
+                            <div class="post-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Leitura: 7 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://via.placeholder.com/50x50/00ff88/000000?text=RL" alt="Roberto Lima">
+                                </div>
+                                <div class="author-details">
+                                    <h3>Roberto Lima</h3>
+                                    <span class="post-meta">Especialista em Financiamento • 1 dia atrás</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn" onclick="sharePost('post-3')">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h2>Financiamento Imobiliário: Tudo que Você Precisa Saber</h2>
+                            <p>O financiamento imobiliário é uma das principais formas de adquirir um imóvel no Brasil. Entenda as opções disponíveis e como escolher a melhor para você...</p>
+                            
+                            <div class="post-media">
+                                <div class="video-container">
+                                    <iframe src="https://via.placeholder.com/600x300/00ff88/000000?text=Video+Financiamento" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="post-tags">
+                                <span class="tag">#Financiamento</span>
+                                <span class="tag">#Investimento</span>
+                                <span class="tag">#DicasFinanceiras</span>
+                            </div>
+                        </div>
+                        
+                        <div class="post-footer">
+                            <div class="post-stats">
+                                <button class="stat-btn" onclick="likePost('post-3')">
+                                    <i class="far fa-heart"></i>
+                                    <span>156</span>
+                                </button>
+                                <button class="stat-btn" onclick="commentPost('post-3')">
+                                    <i class="far fa-comment"></i>
+                                    <span>34</span>
+                                </button>
+                                <button class="stat-btn" onclick="sharePost('post-3')">
+                                    <i class="far fa-share"></i>
+                                    <span>22</span>
+                                </button>
+                            </div>
+                            <div class="post-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Leitura: 6 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <img src="https://via.placeholder.com/50x50/00ff88/000000?text=MC" alt="Maria Costa">
+                                </div>
+                                <div class="author-details">
+                                    <h3>Maria Costa</h3>
+                                    <span class="post-meta">Designer de Interiores • 2 dias atrás</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn" onclick="sharePost('post-4')">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h2>Decoração Sustentável: Tendências Eco-Friendly</h2>
+                            <p>A sustentabilidade está em alta na decoração de interiores. Descubra como criar ambientes bonitos e ecologicamente corretos...</p>
+                            
+                            <div class="post-media">
+                                <div class="image-gallery">
+                                    <img src="https://via.placeholder.com/300x200/00ff88/000000?text=Decoração+1" alt="Decoração 1">
+                                    <img src="https://via.placeholder.com/300x200/00ff88/000000?text=Decoração+2" alt="Decoração 2">
+                                    <img src="https://via.placeholder.com/300x200/00ff88/000000?text=Decoração+3" alt="Decoração 3">
+                                </div>
+                            </div>
+                            
+                            <div class="post-tags">
+                                <span class="tag">#Decoração</span>
+                                <span class="tag">#Sustentabilidade</span>
+                                <span class="tag">#EcoFriendly</span>
+                                <span class="tag">#Interiores</span>
+                            </div>
+                        </div>
+                        
+                        <div class="post-footer">
+                            <div class="post-stats">
+                                <button class="stat-btn" onclick="likePost('post-4')">
+                                    <i class="far fa-heart"></i>
+                                    <span>203</span>
+                                </button>
+                                <button class="stat-btn" onclick="commentPost('post-4')">
+                                    <i class="far fa-comment"></i>
+                                    <span>45</span>
+                                </button>
+                                <button class="stat-btn" onclick="sharePost('post-4')">
+                                    <i class="far fa-share"></i>
+                                    <span>18</span>
+                                </button>
+                            </div>
+                            <div class="post-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Leitura: 4 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Load More Button -->
+                    <div class="load-more">
+                        <button class="btn-secondary" onclick="loadMorePosts()">
+                            <i class="fas fa-plus"></i>
+                            Carregar Mais Posts
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Search -->
+                    <div class="sidebar-widget">
+                        <h3>Buscar Posts</h3>
+                        <div class="search-box">
+                            <input type="text" placeholder="Digite sua busca..." id="blog-search">
+                            <button onclick="searchPosts()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h3>Categorias</h3>
+                        <div class="categories-list">
+                            <a href="#" class="category-item" data-category="tendencias">
+                                <i class="fas fa-trending-up"></i>
+                                <span>Tendências</span>
+                                <span class="count">12</span>
+                            </a>
+                            <a href="#" class="category-item" data-category="dicas">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Dicas</span>
+                                <span class="count">8</span>
+                            </a>
+                            <a href="#" class="category-item" data-category="financiamento">
+                                <i class="fas fa-calculator"></i>
+                                <span>Financiamento</span>
+                                <span class="count">5</span>
+                            </a>
+                            <a href="#" class="category-item" data-category="decoracao">
+                                <i class="fas fa-palette"></i>
+                                <span>Decoração</span>
+                                <span class="count">15</span>
+                            </a>
+                            <a href="#" class="category-item" data-category="sustentabilidade">
+                                <i class="fas fa-leaf"></i>
+                                <span>Sustentabilidade</span>
+                                <span class="count">7</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget">
+                        <h3>Posts Populares</h3>
+                        <div class="popular-posts">
+                            <div class="popular-post">
+                                <img src="https://via.placeholder.com/60x60/00ff88/000000?text=1" alt="Post 1">
+                                <div class="post-info">
+                                    <h4>Como Economizar na Compra do Primeiro Imóvel</h4>
+                                    <span class="views">1.2k visualizações</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <img src="https://via.placeholder.com/60x60/00ff88/000000?text=2" alt="Post 2">
+                                <div class="post-info">
+                                    <h4>5 Erros que Você Deve Evitar ao Comprar um Imóvel</h4>
+                                    <span class="views">980 visualizações</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <img src="https://via.placeholder.com/60x60/00ff88/000000?text=3" alt="Post 3">
+                                <div class="post-info">
+                                    <h4>Investimento Imobiliário: Guia para Iniciantes</h4>
+                                    <span class="views">756 visualizações</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3>Newsletter</h3>
+                        <p>Receba as últimas novidades do mercado imobiliário</p>
+                        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                            <input type="email" placeholder="Seu e-mail" required>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Inscrever-se
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="sidebar-widget">
+                        <h3>Siga-nos</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zeralotes</h3>
+                    <p>Imóveis do futuro, hoje.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="empreendimentos.html">Empreendimentos</a></li>
+                        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>✉️ contato@zeralotes.com</p>
+                    <p>📍 São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zeralotes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cinematic-effects.js"></script>
+    <script src="js/blog-social.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

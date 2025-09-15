@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="login.html" class="nav-link login-btn active">Fazer Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-background">
+                <div class="geometric-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+            
+            <div class="login-content">
+                <div class="login-header">
+                    <h1 class="login-title">
+                        <span class="title-line">ACESSE</span>
+                        <span class="title-line highlight">SEU PAINEL</span>
+                    </h1>
+                    <p class="login-subtitle">Escolha o tipo de acesso para continuar</p>
+                </div>
+
+                <!-- User Type Selection -->
+                <div class="user-type-selection" id="user-type-selection">
+                    <div class="type-cards">
+                        <div class="type-card" data-type="cliente" onclick="selectUserType('cliente')">
+                            <div class="card-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3>CLIENTE</h3>
+                            <p>Acompanhe o andamento do seu empreendimento e visualize suas informações</p>
+                            <div class="card-features">
+                                <span class="feature">✓ Checklist de Andamento</span>
+                                <span class="feature">✓ Histórico de Negociações</span>
+                                <span class="feature">✓ Documentos</span>
+                            </div>
+                        </div>
+
+                        <div class="type-card" data-type="corretor" onclick="selectUserType('corretor')">
+                            <div class="card-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3>CORRETOR</h3>
+                            <p>Gerencie clientes, empreendimentos e conteúdo do sistema</p>
+                            <div class="card-features">
+                                <span class="feature">✓ Gerenciar Clientes</span>
+                                <span class="feature">✓ Cadastrar Empreendimentos</span>
+                                <span class="feature">✓ Criar Posts do Blog</span>
+                                <span class="feature">✓ Editar Conteúdo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Forms -->
+                <div class="login-forms" id="login-forms" style="display: none;">
+                    <!-- Back Button -->
+                    <button class="back-btn" onclick="goBackToSelection()">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar
+                    </button>
+
+                    <!-- Cliente Login Form -->
+                    <div class="login-form" id="cliente-form" style="display: none;">
+                        <div class="form-header">
+                            <h2>Login Cliente</h2>
+                            <p>Entre com suas credenciais para acessar seu painel</p>
+                        </div>
+                        
+                        <form id="cliente-login-form" onsubmit="handleClienteLogin(event)">
+                            <div class="form-group">
+                                <label for="cliente-email">E-mail</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="cliente-email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cliente-password">Senha</label>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="cliente-password" name="password" required>
+                                    <button type="button" class="toggle-password" onclick="togglePassword('cliente-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="remember">
+                                    <span class="checkmark"></span>
+                                    Lembrar de mim
+                                </label>
+                                <a href="#" class="forgot-password">Esqueci minha senha</a>
+                            </div>
+                            
+                            <button type="submit" class="btn-login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Entrar
+                            </button>
+                        </form>
+                        
+                        <div class="form-footer">
+                            <p>Não tem uma conta? <a href="#" onclick="showRegisterForm('cliente')">Cadastre-se</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Corretor Login Form -->
+                    <div class="login-form" id="corretor-form" style="display: none;">
+                        <div class="form-header">
+                            <h2>Login Corretor</h2>
+                            <p>Acesse o painel administrativo da Zeralotes</p>
+                        </div>
+                        
+                        <form id="corretor-login-form" onsubmit="handleCorretorLogin(event)">
+                            <div class="form-group">
+                                <label for="corretor-email">E-mail</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="corretor-email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="corretor-password">Senha</label>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="corretor-password" name="password" required>
+                                    <button type="button" class="toggle-password" onclick="togglePassword('corretor-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="remember">
+                                    <span class="checkmark"></span>
+                                    Lembrar de mim
+                                </label>
+                                <a href="#" class="forgot-password">Esqueci minha senha</a>
+                            </div>
+                            
+                            <button type="submit" class="btn-login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Entrar
+                            </button>
+                        </form>
+                        
+                        <div class="form-footer">
+                            <p>É um novo corretor? <a href="#" onclick="showRegisterForm('corretor')">Solicite acesso</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Forms -->
+                <div class="register-forms" id="register-forms" style="display: none;">
+                    <!-- Back Button -->
+                    <button class="back-btn" onclick="goBackToLogin()">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar ao Login
+                    </button>
+
+                    <!-- Cliente Register Form -->
+                    <div class="register-form" id="cliente-register-form" style="display: none;">
+                        <div class="form-header">
+                            <h2>Cadastro Cliente</h2>
+                            <p>Crie sua conta para acompanhar seu empreendimento</p>
+                        </div>
+                        
+                        <form id="cliente-register-form-data" onsubmit="handleClienteRegister(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cliente-reg-name">Nome Completo</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="cliente-reg-name" name="name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cliente-reg-phone">Telefone</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="cliente-reg-phone" name="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cliente-reg-email">E-mail</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="cliente-reg-email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cliente-reg-password">Senha</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="cliente-reg-password" name="password" required>
+                                        <button type="button" class="toggle-password" onclick="togglePassword('cliente-reg-password')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cliente-reg-confirm-password">Confirmar Senha</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="cliente-reg-confirm-password" name="confirmPassword" required>
+                                        <button type="button" class="toggle-password" onclick="togglePassword('cliente-reg-confirm-password')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    Aceito os <a href="#" class="terms-link">termos de uso</a> e <a href="#" class="terms-link">política de privacidade</a>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn-register">
+                                <i class="fas fa-user-plus"></i>
+                                Criar Conta
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Corretor Register Form -->
+                    <div class="register-form" id="corretor-register-form" style="display: none;">
+                        <div class="form-header">
+                            <h2>Solicitação de Acesso Corretor</h2>
+                            <p>Preencha os dados para solicitar acesso ao painel administrativo</p>
+                        </div>
+                        
+                        <form id="corretor-register-form-data" onsubmit="handleCorretorRegister(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="corretor-reg-name">Nome Completo</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="corretor-reg-name" name="name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="corretor-reg-creci">CRECI</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-id-card"></i>
+                                        <input type="text" id="corretor-reg-creci" name="creci" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="corretor-reg-phone">Telefone</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="corretor-reg-phone" name="phone" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="corretor-reg-experience">Experiência (anos)</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-calendar"></i>
+                                        <input type="number" id="corretor-reg-experience" name="experience" min="0" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="corretor-reg-email">E-mail</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="corretor-reg-email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="corretor-reg-specialties">Especialidades</label>
+                                <div class="input-group">
+                                    <i class="fas fa-tags"></i>
+                                    <input type="text" id="corretor-reg-specialties" name="specialties" placeholder="Ex: Casas, Apartamentos, Terrenos" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="corretor-reg-message">Mensagem</label>
+                                <div class="input-group">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea id="corretor-reg-message" name="message" rows="4" placeholder="Conte-nos um pouco sobre você e sua experiência..." required></textarea>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-register">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Solicitação
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zeralotes</h3>
+                    <p>Imóveis do futuro, hoje.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="empreendimentos.html">Empreendimentos</a></li>
+                        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>✉️ contato@zeralotes.com</p>
+                    <p>📍 São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zeralotes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

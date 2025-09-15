@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/fale-conosco.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link active">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Fazer Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-background">
+            <div class="geometric-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">FALE</span>
+                <span class="title-line highlight">CONOSCO</span>
+            </h1>
+            <p class="hero-subtitle">Estamos aqui para ajudar você a encontrar o imóvel dos seus sonhos</p>
+        </div>
+    </section>
+
+    <!-- Properties CTA Section -->
+    <section class="properties-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Conheça Nossos Empreendimentos</h2>
+                <p>Descubra as melhores opções em imóveis com a qualidade Zeralotes</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="window.location.href='empreendimentos.html'">Ver Empreendimentos</button>
+                    <button class="btn-secondary" onclick="contactWhatsApp()">WhatsApp Direto</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Nossa equipe está pronta para atender você com excelência e agilidade.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>WhatsApp</h3>
+                                <p>(11) 99999-9999</p>
+                                <button class="btn-whatsapp" onclick="contactWhatsApp()">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Conversar no WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>E-mail</h3>
+                                <p>contato@zeralotes.com</p>
+                                <button class="btn-email" onclick="sendEmail()">
+                                    <i class="fas fa-envelope"></i>
+                                    Enviar E-mail
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Telefone</h3>
+                                <p>(11) 3333-4444</p>
+                                <button class="btn-phone" onclick="makeCall()">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar Agora
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Endereço</h3>
+                                <p>Av. Paulista, 1000<br>São Paulo - SP, 01310-100</p>
+                                <button class="btn-location" onclick="openMaps()">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Envie sua Mensagem</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="empreendimento">Informações sobre Empreendimento</option>
+                                <option value="financiamento">Financiamento</option>
+                                <option value="agendamento">Agendar Visita</option>
+                                <option value="duvidas">Dúvidas Gerais</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Broker Section -->
+    <section class="find-broker-section">
+        <div class="container">
+            <div class="broker-finder">
+                <h2>Encontre um Corretor</h2>
+                <p>Selecione seu estado e cidade para encontrar o corretor mais próximo de você</p>
+                
+                <div class="broker-selector">
+                    <div class="selector-step active" id="step-state">
+                        <h3>1. Selecione o Estado</h3>
+                        <div class="state-grid" id="state-grid">
+                            <button class="state-btn" data-state="sp">São Paulo</button>
+                            <button class="state-btn" data-state="rj">Rio de Janeiro</button>
+                            <button class="state-btn" data-state="df">Distrito Federal</button>
+                            <button class="state-btn" data-state="mg">Minas Gerais</button>
+                            <button class="state-btn" data-state="rs">Rio Grande do Sul</button>
+                            <button class="state-btn" data-state="pr">Paraná</button>
+                        </div>
+                    </div>
+                    
+                    <div class="selector-step" id="step-city">
+                        <h3>2. Selecione a Cidade</h3>
+                        <div class="city-grid" id="city-grid">
+                            <!-- Cities will be loaded dynamically -->
+                        </div>
+                        <button class="btn-back" onclick="goBackToStates()">
+                            <i class="fas fa-arrow-left"></i>
+                            Voltar
+                        </button>
+                    </div>
+                    
+                    <div class="selector-step" id="step-brokers">
+                        <h3>3. Escolha seu Corretor</h3>
+                        <div class="brokers-grid" id="brokers-grid">
+                            <!-- Brokers will be loaded dynamically -->
+                        </div>
+                        <button class="btn-back" onclick="goBackToCities()">
+                            <i class="fas fa-arrow-left"></i>
+                            Voltar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="business-hours">
+        <div class="container">
+            <div class="hours-content">
+                <h2>Horário de Funcionamento</h2>
+                <div class="hours-grid">
+                    <div class="hours-card">
+                        <div class="day">Segunda - Sexta</div>
+                        <div class="time">08:00 - 18:00</div>
+                        <div class="status" id="weekday-status">
+                            <i class="fas fa-circle"></i>
+                            <span>Fechado</span>
+                        </div>
+                    </div>
+                    <div class="hours-card">
+                        <div class="day">Sábado</div>
+                        <div class="time">08:00 - 14:00</div>
+                        <div class="status" id="saturday-status">
+                            <i class="fas fa-circle"></i>
+                            <span>Fechado</span>
+                        </div>
+                    </div>
+                    <div class="hours-card">
+                        <div class="day">Domingo</div>
+                        <div class="time">Fechado</div>
+                        <div class="status" id="sunday-status">
+                            <i class="fas fa-circle"></i>
+                            <span>Fechado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">--:--</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zeralotes</h3>
+                    <p>Imóveis do futuro, hoje.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="empreendimentos.html">Empreendimentos</a></li>
+                        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>✉️ contato@zeralotes.com</p>
+                    <p>📍 São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zeralotes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fale-conosco.js"></script>
+</body>
+</html>

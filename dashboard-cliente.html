@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Cliente - Zeralotes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/glow-effects.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/dashboard-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-enhanced">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ZERALOTES</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="empreendimentos.html" class="nav-link">Empreendimentos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="empreendimentos.html#casas">Casas</a></li>
+                        <li><a href="empreendimentos.html#apartamentos">Apartamentos</a></li>
+                        <li><a href="empreendimentos.html#terrenos">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li><a href="fale-conosco.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link user-menu">
+                        <i class="fas fa-user"></i>
+                        <span id="user-name">Cliente</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard-cliente.html">Meu Painel</a></li>
+                        <li><a href="#" onclick="logout()">Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="dashboard-header-content">
+            <div class="dashboard-welcome">
+                <img src="https://via.placeholder.com/80x80/00ff88/000000?text=CS" alt="Cliente" class="dashboard-avatar">
+                <div class="dashboard-user-info">
+                    <h1>Bem-vindo, João Silva!</h1>
+                    <p>Cliente Zeralotes • Residencial Futuro Verde</p>
+                </div>
+            </div>
+            <div class="dashboard-stats">
+                <div class="dashboard-stat">
+                    <div class="dashboard-stat-number">75%</div>
+                    <div class="dashboard-stat-label">Progresso</div>
+                </div>
+                <div class="dashboard-stat">
+                    <div class="dashboard-stat-number">12</div>
+                    <div class="dashboard-stat-label">Etapas</div>
+                </div>
+                <div class="dashboard-stat">
+                    <div class="dashboard-stat-number">45</div>
+                    <div class="dashboard-stat-label">Dias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Ações Rápidas -->
+            <div class="quick-actions">
+                <a href="#contact" class="quick-action">
+                    <div class="quick-action-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="quick-action-title">Falar com Corretor</h3>
+                    <p class="quick-action-description">Entre em contato direto com seu corretor</p>
+                </a>
+                <a href="#documents" class="quick-action">
+                    <div class="quick-action-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="quick-action-title">Documentos</h3>
+                    <p class="quick-action-description">Acesse seus documentos e contratos</p>
+                </a>
+                <a href="#payments" class="quick-action">
+                    <div class="quick-action-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="quick-action-title">Pagamentos</h3>
+                    <p class="quick-action-description">Visualize histórico e próximos vencimentos</p>
+                </a>
+                <a href="#support" class="quick-action">
+                    <div class="quick-action-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="quick-action-title">Suporte</h3>
+                    <p class="quick-action-description">Central de ajuda e atendimento</p>
+                </a>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Card de Progresso Principal -->
+                <div class="progress-card">
+                    <div class="progress-card-header">
+                        <div class="progress-card-title">
+                            <div class="progress-card-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            Progresso do Empreendimento
+                        </div>
+                        <div class="progress-card-status in-progress">Em Andamento</div>
+                    </div>
+                    
+                    <div class="progress-bar-container">
+                        <div class="progress-percentage">75%</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="progress-description">9 de 12 etapas concluídas</div>
+                    </div>
+                    
+                    <ul class="progress-steps">
+                        <li class="progress-step">
+                            <div class="progress-step-icon completed">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="progress-step-content">
+                                <div class="progress-step-title">Contrato Assinado</div>
+                                <div class="progress-step-description">Documentação inicial aprovada</div>
+                            </div>
+                            <div class="progress-step-date">15 Jan</div>
+                        </li>
+                        <li class="progress-step">
+                            <div class="progress-step-icon completed">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="progress-step-content">
+                                <div class="progress-step-title">Aprovação do Projeto</div>
+                                <div class="progress-step-description">Projeto arquitetônico aprovado</div>
+                            </div>
+                            <div class="progress-step-date">22 Jan</div>
+                        </li>
+                        <li class="progress-step">
+                            <div class="progress-step-icon in-progress">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <div class="progress-step-content">
+                                <div class="progress-step-title">Fundação</div>
+                                <div class="progress-step-description">Fundação em andamento</div>
+                            </div>
+                            <div class="progress-step-date">Em andamento</div>
+                        </li>
+                        <li class="progress-step">
+                            <div class="progress-step-icon pending">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="progress-step-content">
+                                <div class="progress-step-title">Estrutura</div>
+                                <div class="progress-step-description">Aguardando início</div>
+                            </div>
+                            <div class="progress-step-date">Previsto: 15 Fev</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card de Atividades Recentes -->
+                <div class="activity-timeline">
+                    <div class="activity-timeline-header">
+                        <div class="activity-timeline-title">
+                            <i class="fas fa-history"></i>
+                            Atividades Recentes
+                        </div>
+                        <div class="activity-filter">
+                            <button class="activity-filter-btn active">Todas</button>
+                            <button class="activity-filter-btn">Importantes</button>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Etapa Concluída</div>
+                            <div class="activity-description">Aprovação do projeto arquitetônico foi finalizada com sucesso.</div>
+                            <div class="activity-meta">
+                                <span class="activity-time">
+                                    <i class="fas fa-clock"></i>
+                                    2 horas atrás
+                                </span>
+                                <span class="activity-user">
+                                    <i class="fas fa-user"></i>
+                                    Carlos Silva
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon info">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Nova Atualização</div>
+                            <div class="activity-description">Fotos da obra foram enviadas. Confira o progresso da fundação.</div>
+                            <div class="activity-meta">
+                                <span class="activity-time">
+                                    <i class="fas fa-clock"></i>
+                                    1 dia atrás
+                                </span>
+                                <span class="activity-user">
+                                    <i class="fas fa-user"></i>
+                                    Ana Santos
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Documento Pendente</div>
+                            <div class="activity-description">É necessário enviar a documentação atualizada até 28/01.</div>
+                            <div class="activity-meta">
+                                <span class="activity-time">
+                                    <i class="fas fa-clock"></i>
+                                    3 dias atrás
+                                </span>
+                                <span class="activity-user">
+                                    <i class="fas fa-user"></i>
+                                    Roberto Lima
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Notificações -->
+                <div class="notifications-panel">
+                    <div class="notifications-header">
+                        <div class="notifications-title">
+                            <i class="fas fa-bell"></i>
+                            Notificações
+                        </div>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon urgent">
+                            <i class="fas fa-exclamation"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Documento Urgente</div>
+                            <div class="notification-text">Envie a documentação atualizada até amanhã para não atrasar a obra.</div>
+                            <div class="notification-time">Há 2 horas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon info">
+                            <i class="fas fa-info"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Nova Foto da Obra</div>
+                            <div class="notification-text">Confira as fotos mais recentes do progresso da sua casa.</div>
+                            <div class="notification-time">Ontem</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-icon info">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Reunião Agendada</div>
+                            <div class="notification-text">Sua reunião com o corretor está agendada para sexta-feira.</div>
+                            <div class="notification-time">2 dias atrás</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <img src="https://via.placeholder.com/80x80/00ff88/000000?text=CS" alt="Cliente" id="profile-avatar">
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profile-name">João Silva</h3>
+                            <p id="profile-email">cliente@teste.com</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="sidebar-nav">
+                        <ul>
+                            <li>
+                                <a href="#overview" class="nav-item active" data-section="overview">
+                                    <i class="fas fa-home"></i>
+                                    <span>Visão Geral</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#checklist" class="nav-item" data-section="checklist">
+                                    <i class="fas fa-tasks"></i>
+                                    <span>Checklist</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#negotiations" class="nav-item" data-section="negotiations">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Negociações</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#documents" class="nav-item" data-section="documents">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Documentos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#messages" class="nav-item" data-section="messages">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Mensagens</span>
+                                    <span class="badge" id="messages-badge">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#profile" class="nav-item" data-section="profile">
+                                    <i class="fas fa-user-cog"></i>
+                                    <span>Perfil</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="dashboard-main">
+                    <!-- Overview Section -->
+                    <section class="dashboard-section-content active" id="overview">
+                        <div class="section-header">
+                            <h1>Visão Geral</h1>
+                            <p>Bem-vindo ao seu painel, acompanhe o progresso do seu empreendimento</p>
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Residencial Futuro Verde</h3>
+                                    <p>Apartamento 1203</p>
+                                    <span class="stat-value">R$ 450.000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Progresso Geral</h3>
+                                    <p>Andamento da Obra</p>
+                                    <span class="stat-value">75%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Previsão de Entrega</h3>
+                                    <p>Data Estimada</p>
+                                    <span class="stat-value">Jun/2024</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Status da Negociação</h3>
+                                    <p>Contrato</p>
+                                    <span class="stat-value">Assinado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Overview -->
+                        <div class="progress-overview">
+                            <h2>Progresso da Obra</h2>
+                            <div class="progress-timeline">
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h3>Fundacao</h3>
+                                        <p>Fundacao concluida com sucesso</p>
+                                        <span class="timeline-date">Jan 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h3>Estrutura</h3>
+                                        <p>Estrutura de concreto finalizada</p>
+                                        <span class="timeline-date">Mar 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item in-progress">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h3>Acabamento</h3>
+                                        <p>Acabamento em andamento</p>
+                                        <span class="timeline-date">Abr 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item pending">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-hourglass-half"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h3>Entrega</h3>
+                                        <p>Aguardando conclusao</p>
+                                        <span class="timeline-date">Jun 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="recent-activity">
+                            <h2>Atividade Recente</h2>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Novas fotos adicionadas</h4>
+                                        <p>15 fotos do progresso da obra foram adicionadas</p>
+                                        <span class="activity-time">2 horas atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Documento atualizado</h4>
+                                        <p>Contrato de financiamento foi atualizado</p>
+                                        <span class="activity-time">1 dia atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Nova mensagem</h4>
+                                        <p>Carlos Silva enviou uma mensagem</p>
+                                        <span class="activity-time">2 dias atrás</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Checklist Section -->
+                    <section class="dashboard-section-content" id="checklist">
+                        <div class="section-header">
+                            <h1>Checklist de Andamento</h1>
+                            <p>Acompanhe todas as etapas do seu empreendimento</p>
+                        </div>
+
+                        <div class="checklist-container">
+                            <div class="checklist-categories">
+                                <div class="category-tabs">
+                                    <button class="tab-btn active" data-category="pre-obra">Pré-Obra</button>
+                                    <button class="tab-btn" data-category="fundacao">Fundação</button>
+                                    <button class="tab-btn" data-category="estrutura">Estrutura</button>
+                                    <button class="tab-btn" data-category="acabamento">Acabamento</button>
+                                    <button class="tab-btn" data-category="entrega">Entrega</button>
+                                </div>
+                            </div>
+
+                            <div class="checklist-content">
+                                <!-- Pré-Obra -->
+                                <div class="checklist-category active" id="pre-obra">
+                                    <div class="category-header">
+                                        <h2>Pré-Obra</h2>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                            <span>100% Concluído</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="checklist-items">
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Licença de Construção</h3>
+                                                <p>Documentação aprovada pela prefeitura</p>
+                                                <span class="item-date">Concluído em 15/12/2023</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Projeto Executivo</h3>
+                                                <p>Projeto detalhado aprovado</p>
+                                                <span class="item-date">Concluído em 20/12/2023</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Contrato de Construção</h3>
+                                                <p>Contrato assinado com construtora</p>
+                                                <span class="item-date">Concluído em 22/12/2023</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fundação -->
+                                <div class="checklist-category" id="fundacao">
+                                    <div class="category-header">
+                                        <h2>Fundação</h2>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                            <span>100% Concluído</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="checklist-items">
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Escavação</h3>
+                                                <p>Escavação do terreno concluída</p>
+                                                <span class="item-date">Concluído em 05/01/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Armadura da Fundação</h3>
+                                                <p>Armadura de aço instalada</p>
+                                                <span class="item-date">Concluído em 10/01/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Concretagem da Fundação</h3>
+                                                <p>Concreto da fundação aplicado</p>
+                                                <span class="item-date">Concluído em 15/01/2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Estrutura -->
+                                <div class="checklist-category" id="estrutura">
+                                    <div class="category-header">
+                                        <h2>Estrutura</h2>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                            <span>100% Concluído</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="checklist-items">
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Estrutura de Concreto</h3>
+                                                <p>Estrutura principal concluída</p>
+                                                <span class="item-date">Concluído em 20/02/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Lajes</h3>
+                                                <p>Todas as lajes foram concretadas</p>
+                                                <span class="item-date">Concluído em 25/02/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Paredes Estruturais</h3>
+                                                <p>Paredes de concreto concluídas</p>
+                                                <span class="item-date">Concluído em 05/03/2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Acabamento -->
+                                <div class="checklist-category" id="acabamento">
+                                    <div class="category-header">
+                                        <h2>Acabamento</h2>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 60%"></div>
+                                            </div>
+                                            <span>60% Concluído</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="checklist-items">
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Instalações Elétricas</h3>
+                                                <p>Fiação e quadros elétricos instalados</p>
+                                                <span class="item-date">Concluído em 10/03/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item completed">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Instalações Hidráulicas</h3>
+                                                <p>Tubulações de água e esgoto</p>
+                                                <span class="item-date">Concluído em 15/03/2024</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item in-progress">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Revestimentos</h3>
+                                                <p>Pisos e azulejos em andamento</p>
+                                                <span class="item-date">Em andamento</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item pending">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Pintura</h3>
+                                                <p>Aguardando conclusão dos revestimentos</p>
+                                                <span class="item-date">Pendente</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item pending">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Portas e Janelas</h3>
+                                                <p>Instalação de esquadrias</p>
+                                                <span class="item-date">Pendente</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entrega -->
+                                <div class="checklist-category" id="entrega">
+                                    <div class="category-header">
+                                        <h2>Entrega</h2>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 0%"></div>
+                                            </div>
+                                            <span>0% Concluído</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="checklist-items">
+                                        <div class="checklist-item pending">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Vistoria Final</h3>
+                                                <p>Vistoria técnica de entrega</p>
+                                                <span class="item-date">Pendente</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item pending">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Documentação de Entrega</h3>
+                                                <p>Documentos finais e chaves</p>
+                                                <span class="item-date">Pendente</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checklist-item pending">
+                                            <div class="item-checkbox">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </div>
+                                            <div class="item-content">
+                                                <h3>Entrega das Chaves</h3>
+                                                <p>Cerimônia de entrega</p>
+                                                <span class="item-date">Pendente</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Other sections will be added here -->
+                    <section class="dashboard-section-content" id="negotiations">
+                        <div class="section-header">
+                            <h1>Negociações</h1>
+                            <p>Histórico de negociações e contratos</p>
+                        </div>
+                        <div class="coming-soon">
+                            <i class="fas fa-handshake"></i>
+                            <h2>Em Desenvolvimento</h2>
+                            <p>Esta seção estará disponível em breve</p>
+                        </div>
+                    </section>
+
+                    <section class="dashboard-section-content" id="documents">
+                        <div class="section-header">
+                            <h1>Documentos</h1>
+                            <p>Seus documentos e contratos</p>
+                        </div>
+                        <div class="coming-soon">
+                            <i class="fas fa-file-alt"></i>
+                            <h2>Em Desenvolvimento</h2>
+                            <p>Esta seção estará disponível em breve</p>
+                        </div>
+                    </section>
+
+                    <section class="dashboard-section-content" id="messages">
+                        <div class="section-header">
+                            <h1>Mensagens</h1>
+                            <p>Comunicação com sua equipe</p>
+                        </div>
+                        <div class="coming-soon">
+                            <i class="fas fa-envelope"></i>
+                            <h2>Em Desenvolvimento</h2>
+                            <p>Esta seção estará disponível em breve</p>
+                        </div>
+                    </section>
+
+                    <section class="dashboard-section-content" id="profile">
+                        <div class="section-header">
+                            <h1>Perfil</h1>
+                            <p>Gerencie suas informações pessoais</p>
+                        </div>
+                        <div class="coming-soon">
+                            <i class="fas fa-user-cog"></i>
+                            <h2>Em Desenvolvimento</h2>
+                            <p>Esta seção estará disponível em breve</p>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cinematic-effects.js"></script>
+    <script src="js/dashboard-cliente.js"></script>
+</body>
+</html>

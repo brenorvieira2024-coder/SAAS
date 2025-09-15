@@ -1,0 +1,483 @@
+/* Otimizações de Performance e Responsividade */
+
+/* Otimizações de Performance */
+* {
+    /* Otimizar rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Lazy Loading para Imagens */
+img {
+    loading: lazy;
+    decoding: async;
+}
+
+/* Otimizações de Animação */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Containers com GPU Acceleration */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Otimizações de Scroll */
+.smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Responsividade Avançada */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--pure-black);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        padding: 2rem 0;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .blog-social-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .blog-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .carousel-item {
+        min-width: 280px;
+    }
+    
+    .blog-carousel {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-cta .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .dashboard-header-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .dashboard-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .progress-card,
+    .activity-timeline,
+    .notifications-panel {
+        padding: 20px;
+    }
+    
+    .viewer-360-container {
+        height: 300px;
+    }
+    
+    .viewer-360-modal-content {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .viewer-360-controls {
+        bottom: 10px;
+        padding: 8px 15px;
+    }
+    
+    .viewer-360-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .progress-card,
+    .activity-timeline,
+    .notifications-panel {
+        padding: 15px;
+    }
+    
+    .blog-post-header {
+        padding: 15px;
+    }
+    
+    .blog-post-content {
+        padding: 15px;
+    }
+    
+    .blog-post-interactions {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .blog-post-engagement {
+        justify-content: center;
+    }
+    
+    .blog-create-post {
+        padding: 15px;
+    }
+    
+    .blog-trending,
+    .blog-suggestions {
+        padding: 15px;
+    }
+}
+
+/* Otimizações para Dispositivos de Alta Densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-title,
+    .section-title {
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* Modo Escuro Otimizado */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --pure-black: #000000;
+        --text-light: #ffffff;
+    }
+}
+
+/* Otimizações de Touch */
+@media (hover: none) and (pointer: coarse) {
+    .btn-primary,
+    .btn-secondary,
+    .nav-link,
+    .carousel-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .blog-post-engagement-btn {
+        min-height: 40px;
+        padding: 10px 20px;
+    }
+    
+    .viewer-360-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Otimizações de Performance para Animações */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Lazy Loading para Seções */
+.lazy-section {
+    min-height: 200px;
+    background: var(--dark-gray);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-size: 1.2rem;
+}
+
+/* Otimizações de Carregamento */
+.loading-skeleton {
+    background: linear-gradient(90deg, var(--dark-gray) 25%, var(--medium-gray) 50%, var(--dark-gray) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Otimizações de Fonte */
+.font-optimized {
+    font-display: swap;
+    font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Otimizações de Grid */
+.grid-optimized {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Otimizações de Flexbox */
+.flex-optimized {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Otimizações de Imagem */
+.image-optimized {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Otimizações de Vídeo */
+.video-optimized {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Otimizações de Performance para Efeitos Glow */
+.glow-optimized {
+    will-change: box-shadow, text-shadow;
+    transform: translateZ(0);
+}
+
+/* Otimizações de Scroll Suave */
+.scroll-optimized {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Otimizações de Focus */
+.focus-optimized:focus {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+/* Otimizações de Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Otimizações de Print */
+@media print {
+    .navbar,
+    .hamburger,
+    .carousel-btn,
+    .viewer-360-controls,
+    .blog-post-engagement,
+    .quick-actions {
+        display: none !important;
+    }
+    
+    .hero,
+    .section {
+        break-inside: avoid;
+    }
+    
+    * {
+        color: black !important;
+        background: white !important;
+    }
+}
+
+/* Otimizações de Performance para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .particles-container,
+    .energy-lines,
+    .matrix-rain {
+        display: none;
+    }
+    
+    .glow-effect,
+    .hologram-effect {
+        box-shadow: none;
+    }
+    
+    .neon-text {
+        text-shadow: none;
+    }
+}
+
+/* Otimizações de Memória */
+.memory-optimized {
+    contain: layout style paint;
+}
+
+/* Otimizações de Renderização */
+.render-optimized {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimizações de Transição */
+.transition-optimized {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform, opacity;
+}
+
+/* Otimizações de Carregamento de Recursos */
+.preload-critical {
+    font-display: swap;
+}
+
+.preload-non-critical {
+    font-display: optional;
+}
+
+/* Otimizações de Cache */
+.cache-optimized {
+    cache-control: max-age=31536000;
+}
+
+/* Otimizações de Compressão */
+.compression-optimized {
+    content-encoding: gzip;
+}
+
+/* Otimizações de CDN */
+.cdn-optimized {
+    crossorigin: anonymous;
+}
+
+/* Otimizações de Service Worker */
+.sw-optimized {
+    service-worker: enabled;
+}
+
+/* Otimizações de PWA */
+.pwa-optimized {
+    display: standalone;
+    orientation: portrait;
+}
+
+/* Otimizações de Performance Geral */
+.performance-optimized {
+    contain: layout style paint;
+    will-change: auto;
+    transform: translateZ(0);
+}
